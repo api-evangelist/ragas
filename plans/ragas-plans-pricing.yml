@@ -5,37 +5,44 @@ provider: Ragas
 providerId: ragas
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
-- AI
+- AI Evaluation
 - LLM
-- Evaluation
 - RAG
 - Open Source
+- Python
+- Metrics
 - Plans
-description: Placeholder plans/pricing artifact for Ragas. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled.
+description: >-
+  Ragas is a free open-source Python library distributed via PyPI under the Apache 2.0 license. There
+  is no Ragas-hosted plan or pricing. Compute and model costs are incurred against the underlying
+  LLM/embedding provider chosen by the user.
+notes: Open-source library; cost flows to the underlying LLM provider, not Ragas.
 sources:
-- https://www.ragas.io/
+- https://docs.ragas.io/
+- https://github.com/explodinggradients/ragas
+- https://pypi.org/project/ragas/
 plans:
-- id: ragas-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
+- id: ragas-oss
+  name: Open Source (Apache 2.0)
+  type: free
+  description: Free use under Apache 2.0; install via pip install ragas. No API key or registration required.
   entries:
-  - label: API Access
-    name: api_access
+  - label: Library
+    name: library
     type: flat
-    metric: varies
+    metric: install
     limit: -1
-    timeFrame: usage
+    timeFrame: lifetime
     geo: global
     unit: 1
-    price: see https://www.ragas.io/
+    price: 0
     userMultiplied: false
   elements:
-  - name: Pending Reconciliation
+  - name: pip install ragas
+  - name: Apache 2.0 license
+  - name: No registration
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

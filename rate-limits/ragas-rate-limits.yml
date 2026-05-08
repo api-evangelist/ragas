@@ -5,31 +5,43 @@ provider: Ragas
 providerId: ragas
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
-- AI
+- AI Evaluation
 - LLM
-- Evaluation
 - RAG
 - Open Source
+- Python
+- Metrics
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for Ragas. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  Not applicable from the Ragas side — there is no hosted Ragas API. Effective rate limits are
+  entirely determined by the LLM and embedding providers Ragas calls (OpenAI, Anthropic, Azure OpenAI,
+  Cohere, etc.). Ragas exposes concurrency controls and caching helpers to keep evaluation runs within
+  those upstream limits.
+notes: Upstream LLM provider limits apply; Ragas itself has none.
 sources:
-- https://www.ragas.io/
+- https://docs.ragas.io/
 responseCodes:
   throttled: 429
 limits:
-- name: Default
-  scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+- name: N/A (no Ragas-hosted API)
+  scope: n/a
+  metric: n/a
+  limit: library only
+  notes: Ragas runs locally; rate limits come from the model provider.
+- name: Upstream LLM provider
+  scope: external
+  metric: requests
+  limit: provider-defined
+  notes: OpenAI/Anthropic/etc. limits apply during evaluation runs.
 policies:
-- name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+- name: Concurrency Control
+  description: Use Ragas RunConfig to set max_workers and enable caching to stay within upstream model limits.
+- name: Caching
+  description: Cache evaluation results and embeddings to avoid repeat upstream calls.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

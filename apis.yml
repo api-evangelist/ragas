@@ -1,7 +1,7 @@
 aid: ragas
 url: https://raw.githubusercontent.com/api-evangelist/ragas/refs/heads/main/apis.yml
 name: Ragas
-x-type: company
+kind: company
 description: >-
   Ragas is an open-source Python evaluation framework for LLM and RAG (retrieval-augmented generation)
   applications. It provides metrics, experiments, dataset management, and integrations with LangChain

@@ -31,7 +31,7 @@ common:
     url: rate-limits/ragas-rate-limits.yml
   - type: FinOps
     url: finops/ragas-finops.yml
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.ragas.io/llms.txt
 maintainers:
   - FN: Kin Lane

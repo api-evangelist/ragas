@@ -6,7 +6,19 @@ description: >-
   Ragas is an open-source Python evaluation framework for LLM and RAG (retrieval-augmented generation)
   applications. It provides metrics, experiments, dataset management, and integrations with LangChain
   and LlamaIndex. Ragas is delivered as a Python library, not a hosted REST API.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Free
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ragas.png
 tags:
   - AI Evaluation
   - LLM
